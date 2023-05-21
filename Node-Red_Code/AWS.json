@@ -1,0 +1,1439 @@
+[
+    {
+        "id": "377bfb1364259b5c",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "03b2242c7edfc3a1",
+        "type": "debug",
+        "z": "377bfb1364259b5c",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "747985d141607cf6",
+        "type": "inject",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "41bf8077396ec93d",
+                "b12593f9634a7c33"
+            ]
+        ]
+    },
+    {
+        "id": "41bf8077396ec93d",
+        "type": "mongodb-aleph-in",
+        "z": "377bfb1364259b5c",
+        "mongodb": "75c3a4a7f5b88d0a",
+        "name": "MongDB",
+        "collection": "new",
+        "operation": "find",
+        "x": 280,
+        "y": 280,
+        "wires": [
+            [
+                "6edde8f335e88900",
+                "0c2ea613f397f2b2",
+                "424c8574f3258721"
+            ]
+        ]
+    },
+    {
+        "id": "6edde8f335e88900",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "mongo array",
+        "func": "msg.payload = msg.payload[0]\nvar {StringDocuments} = msg.payload\nmsg.payload = StringDocuments\nmsg.payload = msg.payload.split(\";\")\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 280,
+        "wires": [
+            [
+                "03b2242c7edfc3a1",
+                "f20d07fc499fe086",
+                "e23fcb79d3fe8230",
+                "624ef678d87261c1",
+                "673ecafed20e258e",
+                "d93a0f3fd53eb8f0",
+                "93e4932dc5011326",
+                "409664b6c0d360ac",
+                "bcedb9bb28506b82",
+                "09c0ecc4d4144fa0"
+            ]
+        ]
+    },
+    {
+        "id": "f20d07fc499fe086",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "panel Temp",
+        "func": "msg.topic = \"P_T\"\nmsg.payload = msg.payload[0].trim()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 200,
+        "wires": [
+            [
+                "070902993f5202b8",
+                "f8c3913ba755ed79",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "070902993f5202b8",
+        "type": "ui_chart",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "6611dd04ec430042",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Panel Temperature Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e23fcb79d3fe8230",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "panel humidity",
+        "func": "msg.topic = \"P_H\"\nmsg.payload = msg.payload[3].trim()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "79f00f4cd81cfdfe",
+                "e61ec0cc4a325b37",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "79f00f4cd81cfdfe",
+        "type": "ui_gauge",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "d99942fdfc7f0ff3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Panel Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 840,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f8c3913ba755ed79",
+        "type": "ui_gauge",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "6611dd04ec430042",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Panel Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "27",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 890,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e61ec0cc4a325b37",
+        "type": "ui_chart",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "d99942fdfc7f0ff3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "624ef678d87261c1",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "hydraulic",
+        "func": "msg.topic = \"H_T\"\nmsg.payload = parseInt(msg.payload[6].trim())\nif (msg.payload > 0 && msg.payload < 180 )\n{\n    \n    return msg;\n}\nelse{\n    msg.payload = \"Fault\"\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "85dbd0aadfa1cd48",
+                "35e92139b4a3922b",
+                "82ca25cdab49469f",
+                "424af0409c633808"
+            ]
+        ]
+    },
+    {
+        "id": "85dbd0aadfa1cd48",
+        "type": "ui_gauge",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "cc32cae871565778",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Hydraulic Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 840,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "35e92139b4a3922b",
+        "type": "ui_chart",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "cc32cae871565778",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Hydraulic Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "019e62bef5cc8dba",
+        "type": "ui_led",
+        "z": "377bfb1364259b5c",
+        "order": 2,
+        "group": "2fbd90044e93e37d",
+        "width": "6",
+        "height": "2",
+        "label": "Lamp Status",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 830,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "673ecafed20e258e",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "panel Lamp",
+        "func": "msg.payload = msg.payload[20]\nlet status = msg.payload\nif (status == \"0\"){\n    msg.payload = true\n}\nelse{\n    msg.payload = false\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 400,
+        "wires": [
+            [
+                "019e62bef5cc8dba"
+            ]
+        ]
+    },
+    {
+        "id": "d93a0f3fd53eb8f0",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "server temp",
+        "func": "msg.topic = \"S_T\"\nmsg.payload = msg.payload[9].trim()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 560,
+        "wires": [
+            [
+                "f2956dbc2cdbc679",
+                "ca5c47549d267a44",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "f2956dbc2cdbc679",
+        "type": "ui_gauge",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "6b4ff88b7267a4ba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ca5c47549d267a44",
+        "type": "ui_chart",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "6b4ff88b7267a4ba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "409664b6c0d360ac",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "server space",
+        "func": "msg.topic = \"S_D\"\nmsg.payload = msg.payload[15].trim()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 780,
+        "wires": [
+            [
+                "ea31266db6af690a",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "93e4932dc5011326",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "server load",
+        "func": "msg.topic = \"S_C\"\nmsg.payload = msg.payload[12].trim()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 700,
+        "wires": [
+            [
+                "b37917d2e2b7fd57",
+                "7d9714bfa0abb909",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "b37917d2e2b7fd57",
+        "type": "ui_gauge",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "7b3155618a4145dd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Load",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "45",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "7d9714bfa0abb909",
+        "type": "ui_chart",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "7b3155618a4145dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "CPU Load chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea31266db6af690a",
+        "type": "ui_gauge",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "cad255c516a57f7f",
+        "order": 0,
+        "width": "6",
+        "height": "8",
+        "gtype": "wave",
+        "title": "Disk Space",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 870,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "b12593f9634a7c33",
+        "type": "simpletime",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "mydate": false,
+        "myymd": true,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": false,
+        "mytimes": true,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 650,
+        "y": 500,
+        "wires": [
+            [
+                "e7a49129432f2f8d",
+                "86e02612e1b0d091"
+            ]
+        ]
+    },
+    {
+        "id": "07e1ad77899f1bf0",
+        "type": "debug",
+        "z": "377bfb1364259b5c",
+        "name": "debug 16",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "e7a49129432f2f8d",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "date",
+        "func": "msg.topic = 'date'\nmsg.payload = msg.myymd\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 520,
+        "wires": [
+            [
+                "07e1ad77899f1bf0",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "86e02612e1b0d091",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "time",
+        "func": "msg.topic = 'time'\nmsg.payload = msg.mytimes\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 480,
+        "wires": [
+            [
+                "07e1ad77899f1bf0",
+                "82ca25cdab49469f"
+            ]
+        ]
+    },
+    {
+        "id": "a1fe8d76fdc65dbb",
+        "type": "csv",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Date, Time, PTemperature, PHumidity, HTemperature, ST, SC, SD",
+        "skip": "0",
+        "strings": false,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1910,
+        "y": 300,
+        "wires": [
+            [
+                "9faea2208680b575"
+            ]
+        ]
+    },
+    {
+        "id": "9faea2208680b575",
+        "type": "file",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "filename": "/usr/src/node-red/cnc.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2150,
+        "y": 300,
+        "wires": [
+            [
+                "3b26d078fc1a7318"
+            ]
+        ]
+    },
+    {
+        "id": "82ca25cdab49469f",
+        "type": "join",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1410,
+        "y": 300,
+        "wires": [
+            [
+                "401c8470aa14326f",
+                "d2340d6374294f8c"
+            ]
+        ]
+    },
+    {
+        "id": "735b3621c289afa1",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "Add file",
+        "func": "let ptemp = msg.payload[\"P_T\"]\nlet phumi = msg.payload[\"P_H\"]\nlet htemp = msg.payload[\"H_T\"]\nlet date = msg.payload[\"date\"]\nlet time = msg.payload[\"time\"]\nlet s_t = msg.payload[\"S_T\"]\nlet s_c = msg.payload[\"S_C\"]\nlet s_d = msg.payload[\"S_D\"]\nlet m = { 'Date': date, 'Time': time, 'PTemperature': ptemp, 'PHumidity': phumi, 'HTemperature': htemp, 'ST': s_t, 'SC': s_c, 'SD': s_d }\nreturn { payload: m };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1760,
+        "y": 300,
+        "wires": [
+            [
+                "a1fe8d76fdc65dbb"
+            ]
+        ]
+    },
+    {
+        "id": "3b26d078fc1a7318",
+        "type": "debug",
+        "z": "377bfb1364259b5c",
+        "name": "debug 17",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2380,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a606a7aa1cb26f88",
+        "type": "file in",
+        "z": "377bfb1364259b5c",
+        "name": "Machine Data",
+        "filename": "/usr/src/node-red/cnc.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1630,
+        "y": 160,
+        "wires": [
+            [
+                "cdaaf84c28f68903"
+            ]
+        ]
+    },
+    {
+        "id": "52ada0a342c87ac3",
+        "type": "ui_button",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "2fbd90044e93e37d",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Download CSV",
+        "tooltip": "download data",
+        "color": "black",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "cloud_download",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1430,
+        "y": 160,
+        "wires": [
+            [
+                "a606a7aa1cb26f88"
+            ]
+        ]
+    },
+    {
+        "id": "cdaaf84c28f68903",
+        "type": "downloadfile",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "filename": "",
+        "encoding": "none",
+        "x": 1840,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "401c8470aa14326f",
+        "type": "debug",
+        "z": "377bfb1364259b5c",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d2340d6374294f8c",
+        "type": "trigger",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1590,
+        "y": 300,
+        "wires": [
+            [
+                "735b3621c289afa1"
+            ]
+        ]
+    },
+    {
+        "id": "3e7571793f84cc1e",
+        "type": "ui_text",
+        "z": "377bfb1364259b5c",
+        "group": "e4f9fe98f5ebd672",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "IP Address",
+        "format": "{{value.substring(0, value.indexOf(\" \"))}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1510,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "bcedb9bb28506b82",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "IP Text",
+        "func": "msg.payload = msg.payload[19].trim()\n//msg.payload = msg.payload.slice(0,14)\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 640,
+        "wires": [
+            [
+                "3e7571793f84cc1e"
+            ]
+        ]
+    },
+    {
+        "id": "d51a1209080af115",
+        "type": "ui_button",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "e4f9fe98f5ebd672",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1500,
+        "y": 960,
+        "wires": [
+            [
+                "6117c461368bbb41"
+            ]
+        ]
+    },
+    {
+        "id": "979c82cf9f657774",
+        "type": "ui_button",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "group": "e4f9fe98f5ebd672",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Shutdown",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "Red",
+        "className": "",
+        "icon": "power_settings_new",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1500,
+        "y": 1020,
+        "wires": [
+            [
+                "31f933c6a6d34749"
+            ]
+        ]
+    },
+    {
+        "id": "71dd3d2ed54561c2",
+        "type": "ui_text",
+        "z": "377bfb1364259b5c",
+        "group": "e4f9fe98f5ebd672",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Network",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1500,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "09c0ecc4d4144fa0",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "IP Text",
+        "func": "msg.payload = msg.payload[18].trim()\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 700,
+        "wires": [
+            [
+                "71dd3d2ed54561c2"
+            ]
+        ]
+    },
+    {
+        "id": "36b01bae9b7b46bc",
+        "type": "ui_text",
+        "z": "377bfb1364259b5c",
+        "group": "e4f9fe98f5ebd672",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1510,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "6117c461368bbb41",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "reboot mongdb",
+        "func": "let reboot = parseInt(msg.payload)\nlet power = 1\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { Reboot: reboot, Power: power } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1900,
+        "y": 960,
+        "wires": [
+            [
+                "3cd69dabba5d66de"
+            ]
+        ]
+    },
+    {
+        "id": "31f933c6a6d34749",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "boot mongodb",
+        "func": "let boot = parseInt(msg.payload)\nlet power = 1\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { Boot: boot, Power: power } }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1900,
+        "y": 1020,
+        "wires": [
+            [
+                "3cd69dabba5d66de"
+            ]
+        ]
+    },
+    {
+        "id": "3cd69dabba5d66de",
+        "type": "mongodb-aleph-out",
+        "z": "377bfb1364259b5c",
+        "mongodb": "b312f59247fc0ff0",
+        "name": "mongoDB2",
+        "collection": "new",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 2170,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "424c8574f3258721",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "power",
+        "func": "msg.payload = msg.payload[0]\nvar { Power } = msg.payload\nmsg.payload = Power\nif (msg.payload == 0){\n   msg.payload = \"ON\"\n}\nelse{\n    msg.payload = \"OFF\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 780,
+        "wires": [
+            [
+                "36b01bae9b7b46bc"
+            ]
+        ]
+    },
+    {
+        "id": "0c2ea613f397f2b2",
+        "type": "debug",
+        "z": "377bfb1364259b5c",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "dc7650167143de4b",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "power status",
+        "func": "msg.payload = 1\nlet power = parseInt(msg.payload)\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { Power: power } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1910,
+        "y": 1080,
+        "wires": [
+            [
+                "3cd69dabba5d66de"
+            ]
+        ]
+    },
+    {
+        "id": "2fd46585fe1e8642",
+        "type": "inject",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "180",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1510,
+        "y": 1080,
+        "wires": [
+            [
+                "dc7650167143de4b"
+            ]
+        ]
+    },
+    {
+        "id": "424af0409c633808",
+        "type": "function",
+        "z": "377bfb1364259b5c",
+        "name": "EmailAlert",
+        "func": "msg.topic = \"Hydraulic Alert!!!!!\"\nmsg.payload = parseInt(msg.payload);\nif (msg.payload > 60){\n    msg.payload = `Alert !!!!!${\"\\n\"} ${\"\\n\"} ${\"\\n\"} High Hydraulic Temperature :- ${msg.payload} ${\"\\n\"} ${\"\\n\"} ${\"\\n\"} ${\"\\n\"} From Workshop M3`\n    return msg;\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 80,
+        "wires": [
+            [
+                "edc4b3cbb2df8469"
+            ]
+        ]
+    },
+    {
+        "id": "edc4b3cbb2df8469",
+        "type": "trigger",
+        "z": "377bfb1364259b5c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1330,
+        "y": 80,
+        "wires": [
+            [
+                "1c023e8e0b1ec7b0"
+            ]
+        ]
+    },
+    {
+        "id": "1c023e8e0b1ec7b0",
+        "type": "e-mail",
+        "z": "377bfb1364259b5c",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": false,
+        "token": "",
+        "secure": true,
+        "tls": true,
+        "name": "suyogbrid1@gmail.com",
+        "dname": "hydraulic alert",
+        "x": 1540,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "10d0c1ecbbe0d734",
+        "type": "ui_spacer",
+        "z": "377bfb1364259b5c",
+        "name": "spacer",
+        "group": "2fbd90044e93e37d",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "75c3a4a7f5b88d0a",
+        "type": "mongodb-aleph-config",
+        "hostname": "iot.mckt0.mongodb.net",
+        "topology": "dnscluster",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "new",
+        "name": ""
+    },
+    {
+        "id": "6611dd04ec430042",
+        "type": "ui_group",
+        "name": "panel Temperature",
+        "tab": "79b34075291e7a75",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d99942fdfc7f0ff3",
+        "type": "ui_group",
+        "name": "Panel Humidity",
+        "tab": "79b34075291e7a75",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cc32cae871565778",
+        "type": "ui_group",
+        "name": "Panel Hydraulic",
+        "tab": "79b34075291e7a75",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2fbd90044e93e37d",
+        "type": "ui_group",
+        "name": "Panel Lamp",
+        "tab": "79b34075291e7a75",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6b4ff88b7267a4ba",
+        "type": "ui_group",
+        "name": "rpi temp",
+        "tab": "38b8e3fc6db566b9",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7b3155618a4145dd",
+        "type": "ui_group",
+        "name": "rpi Load",
+        "tab": "38b8e3fc6db566b9",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cad255c516a57f7f",
+        "type": "ui_group",
+        "name": "rpi disk",
+        "tab": "38b8e3fc6db566b9",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e4f9fe98f5ebd672",
+        "type": "ui_group",
+        "name": "Rpi IP",
+        "tab": "38b8e3fc6db566b9",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b312f59247fc0ff0",
+        "type": "mongodb-aleph-config",
+        "hostname": "iot.mckt0.mongodb.net",
+        "topology": "dnscluster",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "new",
+        "name": "mongodb"
+    },
+    {
+        "id": "79b34075291e7a75",
+        "type": "ui_tab",
+        "name": "Machine Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "38b8e3fc6db566b9",
+        "type": "ui_tab",
+        "name": "Raspberry pi",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

@@ -1,0 +1,4344 @@
+[
+    {
+        "id": "79508898bc68d2e2",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0923bac211a75641",
+        "type": "tab",
+        "label": "CNC_MongoDB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f09e317c50966ba0",
+        "type": "tab",
+        "label": "System Config",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6e59d8c80135077e",
+        "type": "tab",
+        "label": "CNC_FireBase",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9cf3a6d.1104258",
+        "type": "tab",
+        "label": "Raspberry monitoring",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "794ab242d3ed0d6d",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "04bb3339830737f2",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Times New Roman,Times,serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#24f0b9",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#24f0b9",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#24f0b9",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#101413",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#24f0b9",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b312f59247fc0ff0",
+        "type": "mongodb-aleph-config",
+        "hostname": "iot.mckt0.mongodb.net",
+        "topology": "dnscluster",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "new",
+        "name": "mongodb"
+    },
+    {
+        "id": "84625dc937807631",
+        "type": "firebaseCertificate",
+        "firebaseurl": "cnc-iot-34c38-default-rtdb",
+        "loginType": "none"
+    },
+    {
+        "id": "592048b62cb1c4eb",
+        "type": "ui_group",
+        "name": "Electric Panel",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "df4be9159425fb8c",
+        "type": "ui_group",
+        "name": "Electric Panel",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a8c7a9b6b83ab6aa",
+        "type": "ui_tab",
+        "name": "CNC",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8bcad8e97e2ac1b8",
+        "type": "ui_group",
+        "name": "Electrical Panel",
+        "tab": "a8c7a9b6b83ab6aa",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3fc409dc4e28e920",
+        "type": "ui_group",
+        "name": "Electric Panel",
+        "tab": "a8c7a9b6b83ab6aa",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b1c9d917dd37abc2",
+        "type": "ui_group",
+        "name": "Electric Panel",
+        "tab": "a8c7a9b6b83ab6aa",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1890881e.83819",
+        "type": "ui_group",
+        "name": "Col1",
+        "tab": "c3173234.2636e",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "c5f1b8aa.45bc08",
+        "type": "ui_group",
+        "name": "Actions",
+        "tab": "c3173234.2636e",
+        "order": 4,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "9a96a8b1.92db78",
+        "type": "ui_group",
+        "name": "Col2",
+        "tab": "c3173234.2636e",
+        "order": 2,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "72fc319.cc425d",
+        "type": "ui_group",
+        "name": "Col3",
+        "tab": "c3173234.2636e",
+        "order": 3,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "c3173234.2636e",
+        "type": "ui_tab",
+        "name": "RPi Control",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "9cb4bc4d.96552",
+        "type": "ui_group",
+        "name": "System",
+        "tab": "ad4a1223.94ae8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "dd70abe0.14cb38",
+        "type": "ui_group",
+        "name": "OS",
+        "tab": "ad4a1223.94ae8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "14bc5267.4d798e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "raspberry_do_gama_alive",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "Raspberry ativo",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "da9b5871dad1580b",
+        "type": "ui_group",
+        "name": "System",
+        "tab": "ad4a1223.94ae8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e7dcccd30846232a",
+        "type": "ui_group",
+        "name": "OS",
+        "tab": "ad4a1223.94ae8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7bc02db765c5e608",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "raspberry_do_gama_alive",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "Raspberry ativo",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ad4a1223.94ae8",
+        "type": "ui_tab",
+        "z": "9cf3a6d.1104258",
+        "name": "Raspbery PI (Control Panel)",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "48a8fbeb.e660d4",
+        "type": "ui_group",
+        "z": "794ab242d3ed0d6d",
+        "name": "Second",
+        "tab": "3b9094c8.79387c",
+        "order": 2,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "226cb3a1.d25c9c",
+        "type": "ui_group",
+        "z": "794ab242d3ed0d6d",
+        "name": "Click",
+        "tab": "3b9094c8.79387c",
+        "order": 1,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "3b9094c8.79387c",
+        "type": "ui_tab",
+        "z": "794ab242d3ed0d6d",
+        "name": "Home",
+        "icon": "link",
+        "order": 1
+    },
+    {
+        "id": "8fe11c66174ae082",
+        "type": "ui_group",
+        "name": "Lamp Status",
+        "tab": "a8c7a9b6b83ab6aa",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b7e0ba59f3627074",
+        "type": "ui_spacer",
+        "z": "0923bac211a75641",
+        "name": "spacer",
+        "group": "8fe11c66174ae082",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ca630dc7180ccccf",
+        "type": "ui_spacer",
+        "z": "0923bac211a75641",
+        "name": "spacer",
+        "group": "8fe11c66174ae082",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "99915bb217dd7632",
+        "type": "semaphore-config",
+        "name": "sync",
+        "capacity": "1"
+    },
+    {
+        "id": "ac5a472ab94fe147",
+        "type": "rpi-gpio out",
+        "z": "79508898bc68d2e2",
+        "name": "",
+        "pin": "17",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 860,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "45194d1c7044752f",
+        "type": "function",
+        "z": "79508898bc68d2e2",
+        "name": "function 1",
+        "func": "msg.payload = parseInt(msg.humidity);\nif (msg.payload <= 58) {\n    msg.payload = 1;\n    return msg;\n}\nelse{\n    msg.payload = 0;\n    return msg;\n}\n\n        \n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 220,
+        "wires": [
+            [
+                "2e1d0bd63f04411f"
+            ]
+        ]
+    },
+    {
+        "id": "dee5e28aa5cca8cd",
+        "type": "inject",
+        "z": "79508898bc68d2e2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "bf91409b91b59d0b"
+            ]
+        ]
+    },
+    {
+        "id": "bf91409b91b59d0b",
+        "type": "rpi-dht22",
+        "z": "79508898bc68d2e2",
+        "name": "",
+        "topic": "rpi-dht11",
+        "dht": "11",
+        "pintype": "0",
+        "pin": "2",
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "45194d1c7044752f"
+            ]
+        ]
+    },
+    {
+        "id": "2e1d0bd63f04411f",
+        "type": "trigger",
+        "z": "79508898bc68d2e2",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 650,
+        "y": 220,
+        "wires": [
+            [
+                "ac5a472ab94fe147"
+            ]
+        ]
+    },
+    {
+        "id": "aec36c3ed53eef6d",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "60335de0ace56ea2",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "ElectriclPanel_Temp_UI",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "aec36c3ed53eef6d",
+                "282fe1994b2f1bd4",
+                "f78c7cc30f5d718c",
+                "c8192ee8691d502e"
+            ]
+        ]
+    },
+    {
+        "id": "d931681330d89454",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "ElectriclPanel_Humidity_UI",
+        "func": "msg.payload = msg.humidity\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 480,
+        "wires": [
+            [
+                "4e7ad563314fcf09",
+                "d7485f1b9ba15a03",
+                "b11b389027277dc6",
+                "400ae31943270bc3"
+            ]
+        ]
+    },
+    {
+        "id": "4e7ad563314fcf09",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "8f3fdc44ed796aa0",
+        "type": "inject",
+        "z": "0923bac211a75641",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "420",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "985ded4da99beb34",
+                "d0e1ed51b6209a42",
+                "9eb9c0b8b250d1b2",
+                "30f49a9a4e5a61a9",
+                "9986271d60bf1c58",
+                "68f4c7b989525893",
+                "de3297559c917cfd",
+                "497c081745361a94",
+                "d0571d5f53f5a1c5"
+            ]
+        ]
+    },
+    {
+        "id": "f31c43e6714d3d80",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "EmailAlert",
+        "func": "msg.payload = parseInt(msg.payload);\nif (msg.payload > 35){\n    msg.payload = `High Temperature :- ${msg.payload}`\n    return msg;\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "5818cea9a34652fd"
+            ]
+        ]
+    },
+    {
+        "id": "5818cea9a34652fd",
+        "type": "trigger",
+        "z": "0923bac211a75641",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 450,
+        "y": 600,
+        "wires": [
+            [
+                "51028021aa3e49c5"
+            ]
+        ]
+    },
+    {
+        "id": "e838c5674a3ba183",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ecc6a63b4208e248",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "MongDB_InitialUpdate",
+        "func": "msg._id = 203254\nmsg.hydraulic_temp = 66\nmsg.temperature = parseInt(msg.payload)\nmsg.humidity = parseInt(msg.humidity)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "e838c5674a3ba183",
+                "ec592cb51e67e9f4"
+            ]
+        ]
+    },
+    {
+        "id": "58ada9dcfab137fd",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "ElectriclPanel_MongoDB",
+        "func": "\nmsg.temperature = parseInt(msg.payload)\nmsg.humidity = parseInt(msg.humidity)\nmsg.query = { _msgid: \"ade3a876ed9287ca\"}\nmsg.payload = {$set: { temperature: msg.temperature, humidity: msg.humidity }}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe19905bd0078a41",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Hydraulic_MongoDB",
+        "func": "msg.hydraulic_temp = msg.payload\nmsg.query = { _msgid: \"ade3a876ed9287ca\"}\nmsg.payload = {$set: { hydraulic_temp: msg.hydraulic_temp }}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1e47b7b0bd1e511",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Hydraulic UI",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "6a721ea72b80142d",
+                "d022816ec61f4100",
+                "2b27936168dcc8ed"
+            ]
+        ]
+    },
+    {
+        "id": "d0e1ed51b6209a42",
+        "type": "sensor-ds18b20",
+        "z": "0923bac211a75641",
+        "name": "Hydraulic Sensor",
+        "topic": "",
+        "sensorid": "28-3c01f096d2fe",
+        "timer": "1",
+        "repeat": false,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "fe19905bd0078a41",
+                "b1e47b7b0bd1e511",
+                "21a3c94b99b1312e",
+                "7cdf9b8b4384c9b0",
+                "996f3e1225405687"
+            ]
+        ]
+    },
+    {
+        "id": "ec592cb51e67e9f4",
+        "type": "mongodb-aleph-out",
+        "z": "0923bac211a75641",
+        "d": true,
+        "mongodb": "b312f59247fc0ff0",
+        "name": "mongoDB",
+        "collection": "new",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 920,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6edcf315312c3953",
+        "type": "mongodb-aleph-out",
+        "z": "0923bac211a75641",
+        "mongodb": "b312f59247fc0ff0",
+        "name": "mongoDB2",
+        "collection": "new",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 1990,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "985ded4da99beb34",
+        "type": "rpi-dht22",
+        "z": "0923bac211a75641",
+        "name": "Temperature & Humidity sensor",
+        "topic": "rpi-dht11",
+        "dht": "11",
+        "pintype": "0",
+        "pin": "2",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "d931681330d89454",
+                "60335de0ace56ea2",
+                "f31c43e6714d3d80",
+                "58ada9dcfab137fd",
+                "ecc6a63b4208e248",
+                "acacaaa83759fbb9",
+                "d1d85dbe3d3e7e52",
+                "daa2eee67bbc4dec"
+            ]
+        ]
+    },
+    {
+        "id": "51028021aa3e49c5",
+        "type": "e-mail",
+        "z": "0923bac211a75641",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "suyogbrid1@gmail.com",
+        "dname": "Humidity alert",
+        "x": 660,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "6a721ea72b80142d",
+        "type": "ui_gauge",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "b1c9d917dd37abc2",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Hydraulic Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#1af929",
+            "#e6e600",
+            "#b30000"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 660,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d022816ec61f4100",
+        "type": "ui_chart",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "b1c9d917dd37abc2",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Hydraulic Temperature Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 657,
+        "y": 92,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "282fe1994b2f1bd4",
+        "type": "ui_gauge",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "8bcad8e97e2ac1b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Panel Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#1af929",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 930,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f78c7cc30f5d718c",
+        "type": "ui_chart",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "8bcad8e97e2ac1b8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Panel Temperature Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#b31e26",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 950,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b11b389027277dc6",
+        "type": "ui_gauge",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "3fc409dc4e28e920",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Panel Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#45f415",
+            "#e6e600",
+            "#b30012"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 880,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d7485f1b9ba15a03",
+        "type": "ui_chart",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "3fc409dc4e28e920",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Panel Humidity Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#b31e98",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff94c8",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 820,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21a3c94b99b1312e",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "69a61a14edbc7567",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "987ac99bc1255730",
+        "type": "rpi-gpio out",
+        "z": "0923bac211a75641",
+        "name": "",
+        "pin": "17",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 620,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "acacaaa83759fbb9",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Lamp_Controller",
+        "func": "msg.payload = parseInt(msg.payload);\nif (msg.payload <= 23 && msg.payload >5) {\n    msg.payload = 0;\n    return msg;\n}\nelse {\n    msg.payload = 1;\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 680,
+        "wires": [
+            [
+                "787e1649ec36d430"
+            ]
+        ]
+    },
+    {
+        "id": "787e1649ec36d430",
+        "type": "trigger",
+        "z": "0923bac211a75641",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "pay",
+        "op2type": "str",
+        "duration": "10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 430,
+        "y": 680,
+        "wires": [
+            [
+                "987ac99bc1255730",
+                "69a61a14edbc7567",
+                "4850d31a1b40006a",
+                "0da5f0306e61c4f3",
+                "5b1084b2f7bfe095",
+                "aa8211a23741d781"
+            ]
+        ]
+    },
+    {
+        "id": "4850d31a1b40006a",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Lamp_mongoDB",
+        "func": "msg.lamp = parseInt(msg.payload);\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { lamp: msg.lamp } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0da5f0306e61c4f3",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Lamp_status",
+        "func": "msg.payload = parseInt(msg.payload);\nif (msg.payload == 0){\n    msg.payload = \"ON\";\n    return msg;\n}\nelse{\n    msg.payload = \"OFF\";\n    return msg;\n}\n \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 780,
+        "wires": [
+            [
+                "70dab257ead92482"
+            ]
+        ]
+    },
+    {
+        "id": "70dab257ead92482",
+        "type": "ui_text",
+        "z": "0923bac211a75641",
+        "group": "8fe11c66174ae082",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Lamp Satus",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 830,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "5b1084b2f7bfe095",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "function 4",
+        "func": "msg.payload = parseInt(msg.payload);\nif (msg.payload == 0) {\n    msg.payload == true;\n    return msg;\n}\nelse {\n    msg.payload == false;\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9eb9c0b8b250d1b2",
+        "type": "simpletime",
+        "z": "0923bac211a75641",
+        "name": "",
+        "mydate": false,
+        "myymd": true,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": false,
+        "mytimes": true,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 1250,
+        "y": 460,
+        "wires": [
+            [
+                "f1be713b1d518e11",
+                "ebbf8522fa732ee0"
+            ]
+        ]
+    },
+    {
+        "id": "f1be713b1d518e11",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Time",
+        "func": "msg.topic = 'time'\nmsg.payload = msg.mytimes\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1630,
+        "y": 420,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "ebbf8522fa732ee0",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Date",
+        "func": "msg.topic = 'date'\nmsg.payload = msg.myymd\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1630,
+        "y": 480,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "3c9946caef9e7467",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2480,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5670cad621119106",
+        "type": "join",
+        "z": "0923bac211a75641",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1970,
+        "y": 460,
+        "wires": [
+            [
+                "3640ce182346ad0b"
+            ]
+        ]
+    },
+    {
+        "id": "c0a78562bcdaa987",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Add File",
+        "func": "let ptemp = msg.payload[\"P_T\"]\nlet phumi = msg.payload[\"P_H\"]\nlet htemp = msg.payload[\"H_T\"]\nlet date = msg.payload[\"date\"]\nlet time = msg.payload[\"time\"]\nlet s_t = msg.payload[\"S_T\"]\nlet s_c = msg.payload[\"S_C\"]\nlet s_d = msg.payload[\"S_D\"]\nlet m = { 'Date': date, 'Time': time, 'PTemperature': ptemp, 'PHumidity': phumi, 'HTemperature': htemp, 'ST': s_t, 'SC': s_c, 'SD': s_d}\nreturn { payload: m };\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2320,
+        "y": 460,
+        "wires": [
+            [
+                "bebb9f4429ce7abc",
+                "3c9946caef9e7467"
+            ]
+        ]
+    },
+    {
+        "id": "bebb9f4429ce7abc",
+        "type": "csv",
+        "z": "0923bac211a75641",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Date, Time, PTemperature, PHumidity, HTemperature, ST, SC, SD",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 2470,
+        "y": 460,
+        "wires": [
+            [
+                "c6b989889b9846c8"
+            ]
+        ]
+    },
+    {
+        "id": "c6b989889b9846c8",
+        "type": "file",
+        "z": "0923bac211a75641",
+        "name": "",
+        "filename": "/home/pi/cnc.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2650,
+        "y": 460,
+        "wires": [
+            [
+                "36959c2a7e877425"
+            ]
+        ]
+    },
+    {
+        "id": "3640ce182346ad0b",
+        "type": "trigger",
+        "z": "0923bac211a75641",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "15",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 2150,
+        "y": 460,
+        "wires": [
+            [
+                "c0a78562bcdaa987"
+            ]
+        ]
+    },
+    {
+        "id": "a88240497dd89e79",
+        "type": "downloadfile",
+        "z": "0923bac211a75641",
+        "name": "",
+        "filename": "",
+        "encoding": "none",
+        "x": 1930,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "83a7412baf0819da",
+        "type": "file in",
+        "z": "0923bac211a75641",
+        "name": "Machine Data",
+        "filename": "/home/pi/cnc.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1760,
+        "y": 60,
+        "wires": [
+            [
+                "a88240497dd89e79"
+            ]
+        ]
+    },
+    {
+        "id": "2273e4ddac41a33c",
+        "type": "ui_button",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "8fe11c66174ae082",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Download CSV",
+        "tooltip": "download data",
+        "color": "white",
+        "bgcolor": "purple",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1560,
+        "y": 60,
+        "wires": [
+            [
+                "83a7412baf0819da"
+            ]
+        ]
+    },
+    {
+        "id": "30f49a9a4e5a61a9",
+        "type": "exec",
+        "z": "0923bac211a75641",
+        "command": "hostname",
+        "addpay": "",
+        "append": "-I",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Local_IP",
+        "x": 100,
+        "y": 460,
+        "wires": [
+            [
+                "52a46c5bde422ad0",
+                "2fbbf8b0da86c6ca",
+                "0f223b83ee6d93c6"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "52a46c5bde422ad0",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 60,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "2fbbf8b0da86c6ca",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "IP_mongoDB",
+        "func": "msg.server_ip = msg.payload;\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { server_IP: msg.server_ip } }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ba54ac06fb3eb1e",
+        "type": "mqtt in",
+        "z": "0923bac211a75641",
+        "name": "",
+        "topic": "system_temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "14bc5267.4d798e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1390,
+        "y": 640,
+        "wires": [
+            [
+                "986e84e267a509d3",
+                "dbc74a787049ad38"
+            ]
+        ]
+    },
+    {
+        "id": "986e84e267a509d3",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1820,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "36cbaa69ecc142c8",
+        "type": "mqtt in",
+        "z": "0923bac211a75641",
+        "name": "",
+        "topic": "system_cpu",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "14bc5267.4d798e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1390,
+        "y": 720,
+        "wires": [
+            [
+                "ab50bf1ba74983da",
+                "cd9a15fc9dff4ceb"
+            ]
+        ]
+    },
+    {
+        "id": "fba1f1ea33acc7d5",
+        "type": "mqtt in",
+        "z": "0923bac211a75641",
+        "name": "",
+        "topic": "system_disk",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "14bc5267.4d798e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1390,
+        "y": 840,
+        "wires": [
+            [
+                "c9e644b9bb55d72c",
+                "55932dc1d982c492"
+            ]
+        ]
+    },
+    {
+        "id": "ab50bf1ba74983da",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1840,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c9e644b9bb55d72c",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1860,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "013d89df418d7c14",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "server_temp MongoDB",
+        "func": "msg.server_temp = msg.payload;\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { server_temp: msg.server_temp } }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1770,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5348c7ee3994b43a",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "server_cpu MongoDB",
+        "func": "msg.server_cpu = msg.payload;\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { server_cpu: msg.server_cpu } }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1800,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41806fb9b6e5502f",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "server_disk MongoDB",
+        "func": "msg.server_disk = parseInt(msg.payload);\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { server_disk: msg.server_disk } }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f17bee8ec4cc77f",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_T_C_MongoDB",
+        "func": "let temp = msg.payload\nmsg.temp_c = temp < 50 ? '#008000' : '#b22222';\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { S_T_C: msg.temp_c } }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f3dee21719894e6",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_C_C_MongoDB",
+        "func": "let cpu = msg.payload\nmsg.cpu_c = cpu < 20 ? '#008000' : '#b22222';\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { S_C_C: msg.cpu_c } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3192ff0c4d4fd8d6",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_D_C_MongoDB",
+        "func": "let disk = msg.payload\nmsg.disk_c = disk < 50 ? '#008000' : '#b22222';\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { S_D_C: msg.disk_c } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd117169917f250b",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_T_S_MongoDB",
+        "func": "let temp = msg.payload\nmsg.temp_s = temp < 50 ? 'Good' : 'Risk';\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { S_T_S: msg.temp_s } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19f71f34d83d404c",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_C_S_MongoDB",
+        "func": "let cpu = msg.payload\nmsg.cpu_s = cpu < 20 ? 'Good' : 'Risk';\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { S_C_S: msg.cpu_s } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "718acd7bd73205c3",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_D_S_MongoDB",
+        "func": "let disk = msg.payload\nmsg.disk_s = disk < 50 ? 'OK' : 'High';\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { S_D_S: msg.disk_s } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d1d85dbe3d3e7e52",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "PanelCS_DB",
+        "func": "var tempdata  = parseInt(msg.payload)\nvar humiditydata = parseInt(msg.humidity)\nvar temp_color\nvar temp_status\nvar humidity_color\nvar humidity_status\n\n//let temp_color = tempdata >= 27 && tempdata <= 30 ? '#ff8c00' : '#7fff00' || tempdata > 30 ? '#ff0000' : '#7fff00' || tempdata < 23 ? '#00ced1' : '#7fff00';\n//let temp_status = tempdata >= 27 && tempdata <= 30 ? 'Abnormal' : 'Normal' || tempdata > 30 ? 'Danger' : 'Normal' || tempdata < 23 ? 'Low' : 'Normal';\n\n//let humidity_color = humiditydata >= 65 && humiditydata <= 70 ? '#ff8c00' : '#7fff00' || humiditydata > 70 ? '#ff0000' : '#7fff00' || humiditydata < 50 ? '#00ced1' : '#7fff00';\n//let humidity_status = humiditydata >= 65 && humiditydata <= 70 ? 'Abnormal' : 'Normal' || humiditydata > 70 ? 'Danger' : 'Normal' || humiditydata < 50 ? 'Low' : 'Normal';\n\n//Temperature colour\nif(tempdata >= 27 && tempdata <= 30){\n  temp_color = '#ff8c00'\n}\nelse if(tempdata > 30){\n  temp_color = '#ff0000'\n}\nelse if (tempdata < 23){\n  temp_color = '#00ced1'\n}\nelse{\n  temp_color = '#7fff00'\n}\n\n//Temperature status\n\nif (tempdata >= 27 && tempdata <= 30) {\n  temp_status = 'Abnormal'\n}\nelse if (tempdata > 30) {\n  temp_status = 'Danger'\n}\nelse if (tempdata < 23) {\n  temp_status = 'Low'\n}\nelse {\n  temp_status = 'Normal'\n}\n\n//Humidity color\n\nif (humiditydata >= 65 && humiditydata <= 70) {\n  humidity_color = '#ff8c00'\n}\nelse if (humiditydata > 70) {\n  humidity_color = '#ff0000'\n}\nelse if (humiditydata < 50) {\n  humidity_color = '#00ced1'\n}\nelse {\n  humidity_color = '#7fff00'\n}\n\n//Humidity status\n\nif (humiditydata >= 65 && humiditydata <= 70) {\n  humidity_status = 'Abnormal'\n}\nelse if (humiditydata > 70) {\n  humidity_status = 'Danger'\n}\nelse if (humiditydata < 50) {\n  humidity_status = 'Low'\n}\nelse {\n  humidity_status = 'Normal'\n}\n\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { P_T_C: temp_color, \n                        P_T_S: temp_status,\n                        P_H_C: humidity_color,\n                        P_H_S: humidity_status, \n                      } }\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7cdf9b8b4384c9b0",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "HydraulicCS_DB",
+        "func": "var hydraulicdata = msg.payload\n\n//msg.temp_color = hydraulicdata >= 60 && hydraulicdata <= 70 ? '#ff8c00' : '#7fff00' || hydraulicdata > 70 ? '#ff0000' : '#7fff00' || hydraulicdata < 30 ? '#00ced1' : '#7fff00';\n//msg.temp_status = hydraulicdata >= 60 && hydraulicdata <= 70 ? 'Abnormal' : 'Normal' || hydraulicdata > 70 ? 'Danger' : 'Normal' || hydraulicdata < 30 ? 'Low' : 'Normal';\n\n// hydraulic status\nif(hydraulicdata >= 60 && hydraulicdata <= 70){\n    msg.temp_status = 'Abnormal'\n}\nelse if(hydraulicdata > 70){\n    msg.temp_status = 'Danger'\n}\nelse if (hydraulicdata < 30){\n    msg.temp_status = 'Low'\n}\nelse if (hydraulicdata == undefined){\n    msg.temp_status = 'Fault'\n}\nelse{\n    msg.temp_status = 'Normal'\n}\n\n// hydraulic color\nif (hydraulicdata >= 60 && hydraulicdata <= 70) {\n    msg.temp_color = '#ff8c00'\n}\nelse if (hydraulicdata > 70) {\n    msg.temp_color = '#ff0000'\n}\nelse if (hydraulicdata < 30) {\n    msg.temp_color = '#00ced1'\n}\nelse if (hydraulicdata == undefined) {\n    msg.temp_color = '#fffaf0'\n}\nelse {\n    msg.temp_color = '#7fff00'\n}\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = {$set: {H_T_C: msg.temp_color, H_T_S: msg.temp_status} }\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9986271d60bf1c58",
+        "type": "exec",
+        "z": "0923bac211a75641",
+        "command": "iw dev wlan0 info | grep ssid | awk '{print $2}'",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1650,
+        "y": 260,
+        "wires": [
+            [
+                "fd701da309ed2b02",
+                "eeeb707c4781a8a8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fd701da309ed2b02",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Wifi_MongoDB",
+        "func": "let wifi_name = msg.payload\n\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { wifi: wifi_name } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbc74a787049ad38",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "system_temp_csv",
+        "func": "msg.payload\nmsg.topic = \"S_T\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2310,
+        "y": 340,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "cd9a15fc9dff4ceb",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "systemp_cpu_csv",
+        "func": "msg.topic =\"S_C\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2230,
+        "y": 620,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "55932dc1d982c492",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "system_disk_csv",
+        "func": "msg.topic=\"S_D\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2230,
+        "y": 700,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "400ae31943270bc3",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "panel_humidity_csv",
+        "func": "msg.topic=\"P_H\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2230,
+        "y": 560,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "c8192ee8691d502e",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "panel temperature_csv",
+        "func": "msg.topic = \"P_T\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2480,
+        "y": 300,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "2b27936168dcc8ed",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "hydraulic_csv",
+        "func": "msg.topic = \"H_T\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2280,
+        "y": 240,
+        "wires": [
+            [
+                "5670cad621119106"
+            ]
+        ]
+    },
+    {
+        "id": "36959c2a7e877425",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2900,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "126a19351754d701",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "panel_temp_array",
+        "func": "msg.topic=\"P_T\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1160,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "e62b202b3a54d043",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "panel_humidity_array",
+        "func": "msg.topic = \"P_H\"\nmsg.payload = msg.humidity\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1340,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "5c9f3dc481314703",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "hydraulic_temp_array",
+        "func": "msg.topic = \"H_T\"\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1660,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "941ae0e7b34a98e8",
+        "type": "join",
+        "z": "0923bac211a75641",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1170,
+        "y": 1680,
+        "wires": [
+            [
+                "e959e68ed1cfcae6",
+                "45b236eab984e635",
+                "91006adf65b656ce"
+            ]
+        ]
+    },
+    {
+        "id": "e959e68ed1cfcae6",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 12",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1760,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "45b236eab984e635",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "array format",
+        "func": "let ptemp = msg.payload[\"P_T\"]\nlet ptemp_C = msg.payload[\"P_T_C\"]\nlet ptemp_S = msg.payload[\"P_T_S\"]\nlet phumi = msg.payload[\"P_H\"]\nlet phumi_C = msg.payload[\"P_H_C\"]\nlet phumi_S = msg.payload[\"P_H_S\"]\n\nlet htemp = msg.payload[\"H_T\"]\nlet htemp_C = msg.payload[\"H_T_C\"]\nlet htemp_S = msg.payload[\"H_T_S\"]\n\nlet sys_T = msg.payload[\"S_T\"]\nlet sys_T_C = msg.payload[\"S_T_C\"]\nlet sys_T_S = msg.payload[\"S_T_S\"]\n\nlet sys_C = msg.payload[\"S_C\"]\nlet sys_C_C = msg.payload[\"S_C_C\"]\nlet sys_C_S = msg.payload[\"S_C_S\"]\n\nlet sys_D = msg.payload[\"S_D\"]\nlet sys_D_C = msg.payload[\"S_D_C\"]\nlet sys_D_S = msg.payload[\"S_D_S\"]\n\nlet wifi = msg.payload[\"wifi\"]\nlet IP = msg.payload[\"IP\"]\nlet lamp = msg.payload[\"lamp\"]\n\n\nmsg.payload = [ptemp, ptemp_C, ptemp_S, \n               phumi, phumi_C, phumi_S, \n               htemp, htemp_C, htemp_S, \n               sys_T, sys_T_C, sys_T_S, \n               sys_C, sys_C_C, sys_C_S, \n               sys_D, sys_D_C, sys_D_S, \n               wifi, IP, lamp]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1630,
+        "y": 1760,
+        "wires": [
+            [
+                "6be2dcfc0681b8fa",
+                "f3a7bf1ca5705b03"
+            ]
+        ]
+    },
+    {
+        "id": "6be2dcfc0681b8fa",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 13",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1940,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "91006adf65b656ce",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "string format",
+        "func": "let ptemp = msg.payload[\"P_T\"]\nlet ptemp_C = msg.payload[\"P_T_C\"]\nlet ptemp_S = msg.payload[\"P_T_S\"]\nlet phumi = msg.payload[\"P_H\"]\nlet phumi_C = msg.payload[\"P_H_C\"]\nlet phumi_S = msg.payload[\"P_H_S\"]\n\nlet htemp = msg.payload[\"H_T\"]\nlet htemp_C = msg.payload[\"H_T_C\"]\nlet htemp_S = msg.payload[\"H_T_S\"]\n\nlet sys_T = msg.payload[\"S_T\"]\nlet sys_T_C = msg.payload[\"S_T_C\"]\nlet sys_T_S = msg.payload[\"S_T_S\"]\n\nlet sys_C = msg.payload[\"S_C\"]\nlet sys_C_C = msg.payload[\"S_C_C\"]\nlet sys_C_S = msg.payload[\"S_C_S\"]\n\nlet sys_D = msg.payload[\"S_D\"]\nlet sys_D_C = msg.payload[\"S_D_C\"]\nlet sys_D_S = msg.payload[\"S_D_S\"]\n\nlet wifi = msg.payload[\"wifi\"].trim()\nlet IP = msg.payload[\"IP\"].trim()\nlet lamp = msg.payload[\"lamp\"]\n\nlet app = msg.payload[\"appDelay\"]\n\n\nmsg.payload = `${ptemp};${ptemp_C};${ptemp_S};\n                ${phumi};${phumi_C};${phumi_S};\n                ${htemp};${htemp_C};${htemp_S};\n                ${sys_T};${sys_T_C};${sys_T_S};\n                ${sys_C};${sys_C_C};${sys_C_S};\n                ${sys_D};${sys_D_C};${sys_D_S};\n                ${wifi.trim()};${IP};${lamp};${app}`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 1600,
+        "wires": [
+            [
+                "eabba47c84f5ecd4"
+            ]
+        ]
+    },
+    {
+        "id": "f3a7bf1ca5705b03",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Array_MongoDB",
+        "func": "let documents = msg.payload\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { Documents: documents } }\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1650,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f91830621ac9d011",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "string_MongoDB",
+        "func": "let documents = msg.payload\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = {$set: {StringDocuments: documents } }\nreturn msg;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1730,
+        "y": 1500,
+        "wires": [
+            [
+                "6edcf315312c3953"
+            ]
+        ]
+    },
+    {
+        "id": "36c5b54d332e95af",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Panel_temp_color",
+        "func": "msg.topic=\"P_T_C\"\nvar tempdata = parseInt(msg.payload)\nvar temp_color\n//Temperature colour\nif (tempdata >= 27 && tempdata <= 30) {\n    temp_color = '#ff8c00'\n}\nelse if (tempdata > 30) {\n    temp_color = '#ff0000'\n}\nelse if (tempdata < 23) {\n    temp_color = '#00ced1'\n}\nelse {\n    temp_color = '#7fff00'\n}\n\nmsg.payload = temp_color;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1220,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "d98ff59dbe5580ce",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Panel_temp_Status",
+        "func": "msg.topic = \"P_T_S\"\nvar tempdata = parseInt(msg.payload)\nvar temp_status\n\n//Temperature status\n\nif (tempdata >= 27 && tempdata <= 30) {\n    temp_status = 'Abnormal'\n}\nelse if (tempdata > 30) {\n    temp_status = 'Danger'\n}\nelse if (tempdata < 23) {\n    temp_status = 'Low'\n}\nelse {\n    temp_status = 'Normal'\n}\n\nmsg.payload = temp_status;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1280,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "30369466a64cb0b6",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Panel_humi_color",
+        "func": "msg.topic = \"P_H_C\"\nvar humiditydata = parseInt(msg.humidity)\nvar humidity_color\n\n//Humidity color\n\nif (humiditydata >= 65 && humiditydata <= 70) {\n    humidity_color = '#ff8c00'\n}\nelse if (humiditydata > 70) {\n    humidity_color = '#ff0000'\n}\nelse if (humiditydata < 50) {\n    humidity_color = '#00ced1'\n}\nelse {\n    humidity_color = '#7fff00'\n}\n\nmsg.payload = humidity_color;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1400,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "1ca8ad69a9d96d1c",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Panel_humi_Status",
+        "func": "msg.topic = \"P_H_S\"\nvar humiditydata = parseInt(msg.humidity)\nvar humidity_status\n\n//Humidity status\n\nif (humiditydata >= 65 && humiditydata <= 70) {\n    humidity_status = 'Abnormal'\n}\nelse if (humiditydata > 70) {\n    humidity_status = 'Danger'\n}\nelse if (humiditydata < 50) {\n    humidity_status = 'Low'\n}\nelse {\n    humidity_status = 'Normal'\n}\n\nmsg.payload = humidity_status;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1460,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "daa2eee67bbc4dec",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Electrical Panel for array",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1080,
+        "wires": [
+            [
+                "126a19351754d701",
+                "36c5b54d332e95af",
+                "d98ff59dbe5580ce",
+                "e62b202b3a54d043",
+                "1ca8ad69a9d96d1c",
+                "30369466a64cb0b6"
+            ]
+        ]
+    },
+    {
+        "id": "996f3e1225405687",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Hydraulic for array",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1600,
+        "wires": [
+            [
+                "5c9f3dc481314703",
+                "30b1ccdec267f884",
+                "48f1ae44e57e8470"
+            ]
+        ]
+    },
+    {
+        "id": "30b1ccdec267f884",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "hydraulic_temp_color",
+        "func": "msg.topic = \"H_T_C\"\nvar hydraulicdata = msg.payload\nvar temp_color\n\n// hydraulic color\nif (hydraulicdata >= 60 && hydraulicdata <= 70) {\n    temp_color = '#ff8c00'\n}\nelse if (hydraulicdata > 70) {\n    temp_color = '#ff0000'\n}\nelse if (hydraulicdata < 30) {\n    temp_color = '#00ced1'\n}\nelse if (hydraulicdata == undefined) {\n    temp_color = '#fffaf0'\n}\nelse {\n    temp_color = '#7fff00'\n}\n\nmsg.payload = temp_color\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1720,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "48f1ae44e57e8470",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "hydraulic_temp_status",
+        "func": "msg.topic = \"H_T_S\"\nvar hydraulicdata = msg.payload\nvar temp_status\n\nif (hydraulicdata >= 60 && hydraulicdata <= 70) {\n    temp_status = 'Abnormal'\n}\nelse if (hydraulicdata > 70) {\n    temp_status = 'Danger'\n}\nelse if (hydraulicdata < 30) {\n    temp_status = 'Low'\n}\nelse if (hydraulicdata == undefined) {\n    temp_status = 'Fault'\n}\nelse {\n    temp_status = 'Normal'\n}\n\nmsg.payload = temp_status\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1780,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "32e52b9d9087bd61",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_T_C_array",
+        "func": "msg.topic = \"S_T_C\"\n\nlet temp = msg.payload\nmsg.temp_c = temp < 50 ? '#008000' : '#b22222';\n\nmsg.payload = msg.temp_c\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1120,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "978cedb73171e995",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_T_S_array",
+        "func": "msg.topic = \"S_T_S\"\n\nlet temp = msg.payload\nmsg.temp_s = temp < 50 ? 'Good' : 'Risk';\n\nmsg.payload = msg.temp_s\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1160,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "4ce9b26eca8d32f8",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_C_C_array",
+        "func": "msg.topic = \"S_C_C\"\n\nlet cpu = msg.payload\nmsg.cpu_c = cpu < 20 ? '#008000' : '#b22222';\n\nmsg.payload = msg.cpu_c\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 1200,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "77315d3b34c1242f",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_C_S_array",
+        "func": "msg.topic = \"S_C_S\"\n\nlet cpu = msg.payload\nmsg.cpu_s = cpu < 20 ? 'Good' : 'Risk';\n\nmsg.payload = msg.cpu_s\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 1240,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "8aca70c71b1b5670",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_D_C_array",
+        "func": "msg.topic = \"S_D_C\"\nlet disk = msg.payload\nmsg.disk_c = disk < 50 ? '#008000' : '#b22222';\n\nmsg.payload = msg.disk_c\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 1280,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "a3a2a315b4fd8366",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_D_S_array",
+        "func": "msg.topic = \"S_D_S\"\nlet disk = msg.payload\nmsg.disk_s = disk < 50 ? 'OK' : 'High';\n\nmsg.payload = msg.disk_s\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 1320,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "98fee3bfc67c2702",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_D_array",
+        "func": "msg.topic = \"S_D\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1440,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "84e0467e7610c96a",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_C_array",
+        "func": "msg.topic = \"S_C\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1400,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "6fbfc30c04e5d945",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "S_T_array",
+        "func": "msg.topic = \"S_T\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1360,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "0f223b83ee6d93c6",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Server_IP_array",
+        "func": "msg.topic = \"IP\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1200,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "eeeb707c4781a8a8",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "wifi_name_array",
+        "func": "msg.topic = \"wifi\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1160,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "aa8211a23741d781",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "Lamp_array",
+        "func": "msg.topic = \"lamp\"\nmsg.payload = parseInt(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1240,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "68f4c7b989525893",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "delay_for app",
+        "func": "msg.topic = \"appDelay\"\nmsg.payload = 180000\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1300,
+        "wires": [
+            [
+                "941ae0e7b34a98e8"
+            ]
+        ]
+    },
+    {
+        "id": "de3297559c917cfd",
+        "type": "exec",
+        "z": "0923bac211a75641",
+        "command": "vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "RPi Temp.",
+        "x": 730,
+        "y": 980,
+        "wires": [
+            [
+                "9a8365800ae80b6f"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9a8365800ae80b6f",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "",
+        "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 800,
+        "y": 1040,
+        "wires": [
+            [
+                "32e52b9d9087bd61",
+                "978cedb73171e995",
+                "6fbfc30c04e5d945",
+                "139246f0701bfa5d",
+                "a552e5eb060bd92d"
+            ]
+        ]
+    },
+    {
+        "id": "497c081745361a94",
+        "type": "exec",
+        "z": "0923bac211a75641",
+        "command": "top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "CPU Load",
+        "x": 790,
+        "y": 1100,
+        "wires": [
+            [
+                "4ce9b26eca8d32f8",
+                "77315d3b34c1242f",
+                "84e0467e7610c96a",
+                "c61e3ccef5609c3a"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d0571d5f53f5a1c5",
+        "type": "exec",
+        "z": "0923bac211a75641",
+        "command": "df -h",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Disk Usage",
+        "x": 790,
+        "y": 1160,
+        "wires": [
+            [
+                "d644f78fa6c5aead"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d644f78fa6c5aead",
+        "type": "function",
+        "z": "0923bac211a75641",
+        "name": "",
+        "func": "var re = /([0-9]{2})%/\nvar idx = msg.payload.search(re);\nvar str = msg.payload;\nif (idx >=0) {\n    str = msg.payload.substring(idx, idx + 2);\n}\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1220,
+        "wires": [
+            [
+                "8aca70c71b1b5670",
+                "a3a2a315b4fd8366",
+                "98fee3bfc67c2702",
+                "aca69a174da00eed"
+            ]
+        ]
+    },
+    {
+        "id": "d7565a1cc8362d32",
+        "type": "debug",
+        "z": "0923bac211a75641",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2020,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "eabba47c84f5ecd4",
+        "type": "trigger",
+        "z": "0923bac211a75641",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1820,
+        "y": 1560,
+        "wires": [
+            [
+                "f91830621ac9d011",
+                "d7565a1cc8362d32"
+            ]
+        ]
+    },
+    {
+        "id": "139246f0701bfa5d",
+        "type": "ui_gauge",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1650,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "a552e5eb060bd92d",
+        "type": "ui_chart",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "outputs": 1,
+        "x": 1650,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c61e3ccef5609c3a",
+        "type": "ui_gauge",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Processor",
+        "label": "CPU",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 1650,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "aca69a174da00eed",
+        "type": "ui_gauge",
+        "z": "0923bac211a75641",
+        "name": "",
+        "group": "72fc319.cc425d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Disk",
+        "label": "Usage",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 1650,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "2653a0b0.26d638",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fba68adf.14e13",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "command": "vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "RPi Temp.",
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "fa5b499.e176cb8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7c8379de.068868",
+        "type": "inject",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "420",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 224.5,
+        "y": 108.25,
+        "wires": [
+            [
+                "fba68adf.14e13",
+                "972ece2a.3dbe8",
+                "6242be99.26ac88",
+                "270f61f0.9af05e",
+                "685145c38ceac64a"
+            ]
+        ]
+    },
+    {
+        "id": "fa5b499.e176cb8",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "2653a0b0.26d638",
+                "28b64a2c.b32116",
+                "105da9547136332a"
+            ]
+        ]
+    },
+    {
+        "id": "28b64a2c.b32116",
+        "type": "ui_chart",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 790,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "972ece2a.3dbe8",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "command": "top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "CPU Load",
+        "x": 430,
+        "y": 180,
+        "wires": [
+            [
+                "b9372186.ed1a5",
+                "6e99e27beffc7d9b"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6242be99.26ac88",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "free | grep Mem | awk '{print 100*($4+$6+$7)/$2}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "Free Memory",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "9b301b09.8c0468"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b9372186.ed1a5",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Processor",
+        "label": "CPU",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9b301b09.8c0468",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "group": "9a96a8b1.92db78",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Memory",
+        "label": "RAM",
+        "format": "{{value.toFixed(1)}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "270f61f0.9af05e",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "command": "df -h",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "Disk Usage",
+        "x": 430,
+        "y": 340,
+        "wires": [
+            [
+                "d70b7556.a0a9e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7ca6ecb.7512014",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "72fc319.cc425d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Disk",
+        "label": "Usage",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d70b7556.a0a9e",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "func": "var re = /([0-9]{2})%/\nvar idx = msg.payload.search(re);\nvar str = msg.payload;\nif (idx >=0) {\n    str = msg.payload.substring(idx, idx + 2);\n}\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "7ca6ecb.7512014",
+                "4e733097fb2a5495"
+            ]
+        ]
+    },
+    {
+        "id": "4513eb464bea5f29",
+        "type": "ui_button",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "group": "c5f1b8aa.45bc08",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 220,
+        "y": 500,
+        "wires": [
+            [
+                "3ada0815dfbe3256"
+            ]
+        ]
+    },
+    {
+        "id": "3ada0815dfbe3256",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Reboot",
+        "x": 420,
+        "y": 500,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "93efa98c3014e68b",
+        "type": "ui_button",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "group": "c5f1b8aa.45bc08",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Shutdown",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 209.61107635498047,
+        "y": 556.4722290039062,
+        "wires": [
+            [
+                "6a8a8f8c55a782bb"
+            ]
+        ]
+    },
+    {
+        "id": "6a8a8f8c55a782bb",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "sudo shutdown -h now",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Shutdown",
+        "x": 429.49996185302734,
+        "y": 556.6944227218628,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "49fc0e1fecb88bec",
+        "type": "ui_text",
+        "z": "f09e317c50966ba0",
+        "group": "c5f1b8aa.45bc08",
+        "order": 2,
+        "width": "6",
+        "height": "4",
+        "name": "",
+        "label": "IP Address",
+        "format": "{{value.substring(0, value.indexOf(\" \"))}}",
+        "layout": "col-center",
+        "x": 766.8888969421387,
+        "y": 600.888840675354,
+        "wires": []
+    },
+    {
+        "id": "685145c38ceac64a",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "hostname",
+        "addpay": false,
+        "append": "-I",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Get Local IP",
+        "x": 428.79706954956055,
+        "y": 616.0670251846313,
+        "wires": [
+            [
+                "b61a8716ba42cc0b",
+                "49fc0e1fecb88bec",
+                "f0526cb91ae96427"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b61a8716ba42cc0b",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "Send IP thru MQTT",
+        "topic": "raspberrypi3_ip_gama",
+        "qos": "0",
+        "retain": "true",
+        "broker": "14bc5267.4d798e",
+        "x": 786.0192756652832,
+        "y": 550.344822883606,
+        "wires": []
+    },
+    {
+        "id": "f0526cb91ae96427",
+        "type": "debug",
+        "z": "f09e317c50966ba0",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "105da9547136332a",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "system_temp MQTT",
+        "topic": "system_temp",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "14bc5267.4d798e",
+        "x": 1040,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6e99e27beffc7d9b",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "system_cpu MQTT",
+        "topic": "system_cpu",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "14bc5267.4d798e",
+        "x": 1070,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4e733097fb2a5495",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "system_disk MQTT",
+        "topic": "system_disk",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "14bc5267.4d798e",
+        "x": 990,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c342907f073c7910",
+        "type": "debug",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9ff29e259711cd9a",
+        "type": "function",
+        "z": "6e59d8c80135077e",
+        "name": "ElectriclPanel_Temp_UI",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "c342907f073c7910",
+                "91d01f39af42ee1f",
+                "92bebb64473d2ee9"
+            ]
+        ]
+    },
+    {
+        "id": "f3455da51692cb7a",
+        "type": "function",
+        "z": "6e59d8c80135077e",
+        "name": "ElectriclPanel_Humidity_UI",
+        "func": "msg.payload = msg.humidity\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 480,
+        "wires": [
+            [
+                "a5414f695a06a187",
+                "02b2f9c325b7441e",
+                "ebfd8ca009a4249e"
+            ]
+        ]
+    },
+    {
+        "id": "a5414f695a06a187",
+        "type": "debug",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "8233c709e6a12ceb",
+        "type": "inject",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "7262942f587279d5",
+                "c533eb5792826993"
+            ]
+        ]
+    },
+    {
+        "id": "f205984bbfcefa88",
+        "type": "function",
+        "z": "6e59d8c80135077e",
+        "name": "EmailAlert",
+        "func": "msg.payload = parseInt(msg.humidity);\nif (msg.payload > 80){\n    msg.payload = `High Humidity :- ${msg.payload}`\n    return msg;\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "a7267e7b7e4a20fc"
+            ]
+        ]
+    },
+    {
+        "id": "a7267e7b7e4a20fc",
+        "type": "trigger",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "nul",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 450,
+        "y": 600,
+        "wires": [
+            [
+                "4891d2165c615a66"
+            ]
+        ]
+    },
+    {
+        "id": "af3b15d52efcbcfb",
+        "type": "debug",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f14c3dd055c7ac8b",
+        "type": "function",
+        "z": "6e59d8c80135077e",
+        "name": "MongDB_InitialUpdate",
+        "func": "msg._id = 203254\nmsg.hydraulic_temp = 66\nmsg.temperature = parseInt(msg.payload)\nmsg.humidity = parseInt(msg.humidity)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "af3b15d52efcbcfb"
+            ]
+        ]
+    },
+    {
+        "id": "cf9e6a3230d7af49",
+        "type": "function",
+        "z": "6e59d8c80135077e",
+        "name": "ElectriclPanel_MongoDB",
+        "func": "\nmsg.temperature = parseInt(msg.payload)\nmsg.humidity = parseInt(msg.humidity)\nmsg.query = { _msgid: \"ade3a876ed9287ca\"}\nmsg.payload = {$set: { temperature: msg.temperature, humidity: msg.humidity }}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f18c88b8b7694b5",
+        "type": "function",
+        "z": "6e59d8c80135077e",
+        "name": "Hydraulic UI",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "f34b16d053cd9d90",
+                "c52871f6d03e5ba4"
+            ]
+        ]
+    },
+    {
+        "id": "92bebb64473d2ee9",
+        "type": "ui_chart",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "group": "8bcad8e97e2ac1b8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Panel Temperature Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#b31e26",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 950,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ebfd8ca009a4249e",
+        "type": "ui_chart",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "group": "3fc409dc4e28e920",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Panel Humidity Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#b31e98",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff94c8",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 820,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c52871f6d03e5ba4",
+        "type": "ui_chart",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "group": "b1c9d917dd37abc2",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Hydraulic Temperature Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 680,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "91d01f39af42ee1f",
+        "type": "ui_gauge",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "group": "8bcad8e97e2ac1b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Panel Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#1af929",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 930,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "02b2f9c325b7441e",
+        "type": "ui_gauge",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "group": "3fc409dc4e28e920",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Panel Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#45f415",
+            "#e6e600",
+            "#b30012"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 780,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f34b16d053cd9d90",
+        "type": "ui_gauge",
+        "z": "6e59d8c80135077e",
+        "name": "",
+        "group": "b1c9d917dd37abc2",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Hydraulic Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#1af929",
+            "#e6e600",
+            "#b30000"
+        ],
+        "seg1": "30",
+        "seg2": "50",
+        "x": 660,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c533eb5792826993",
+        "type": "sensor-ds18b20",
+        "z": "6e59d8c80135077e",
+        "name": "Hydraulic Sensor",
+        "topic": "",
+        "sensorid": "28-3c01f096d2fe",
+        "timer": "1",
+        "repeat": false,
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "2f18c88b8b7694b5"
+            ]
+        ]
+    },
+    {
+        "id": "7262942f587279d5",
+        "type": "rpi-dht22",
+        "z": "6e59d8c80135077e",
+        "name": "Temperature & Humidity sensor",
+        "topic": "rpi-dht11",
+        "dht": "11",
+        "pintype": "0",
+        "pin": "2",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "f3455da51692cb7a",
+                "9ff29e259711cd9a",
+                "f205984bbfcefa88",
+                "cf9e6a3230d7af49",
+                "f14c3dd055c7ac8b"
+            ]
+        ]
+    },
+    {
+        "id": "4891d2165c615a66",
+        "type": "e-mail",
+        "z": "6e59d8c80135077e",
+        "d": true,
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "suyogbrid1@gmail.com",
+        "dname": "Humidity alert",
+        "x": 660,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d4feb199.b898b",
+        "type": "ui_gauge",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "da9b5871dad1580b",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "CPU Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "35",
+        "seg2": "60",
+        "x": 683,
+        "y": 33,
+        "wires": []
+    },
+    {
+        "id": "c0682e5c.a4fc",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "RPi Temp.",
+        "x": 325.2221908569336,
+        "y": 46.33333683013916,
+        "wires": [
+            [
+                "95ae4c48.9f606"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2be04c82.d0af74",
+        "type": "inject",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 107.49996185302734,
+        "y": 46.805556297302246,
+        "wires": [
+            [
+                "c0682e5c.a4fc",
+                "92285ea6.f97a7",
+                "c0ffe68.afd6e18"
+            ]
+        ]
+    },
+    {
+        "id": "95ae4c48.9f606",
+        "type": "function",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 471.888858795166,
+        "y": 33.00000190734863,
+        "wires": [
+            [
+                "d4feb199.b898b",
+                "4bae8072.e81c2"
+            ]
+        ]
+    },
+    {
+        "id": "f4592b30.2f0528",
+        "type": "ui_button",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "e7dcccd30846232a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 114.66669464111328,
+        "y": 330.0000696182251,
+        "wires": [
+            [
+                "cf3854e6.653878"
+            ]
+        ]
+    },
+    {
+        "id": "cf3854e6.653878",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Reboot",
+        "x": 314.888916015625,
+        "y": 330.0000457763672,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4b4a0861.092b28",
+        "type": "ui_button",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "e7dcccd30846232a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Shutdown",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 104.27777099609375,
+        "y": 386.47229862213135,
+        "wires": [
+            [
+                "4de9dba1.ed7854"
+            ]
+        ]
+    },
+    {
+        "id": "4de9dba1.ed7854",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "sudo shutdown -h now",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Shutdown",
+        "x": 324.1666564941406,
+        "y": 386.6944923400879,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4bae8072.e81c2",
+        "type": "ui_chart",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "da9b5871dad1580b",
+        "order": 5,
+        "width": "6",
+        "height": "4",
+        "label": "CPU Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 683.9999389648438,
+        "y": 72.66667175292969,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "92285ea6.f97a7",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "CPU Load",
+        "x": 325.2221908569336,
+        "y": 126.33333683013916,
+        "wires": [
+            [
+                "404f06.1e77b0fc"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c0ffe68.afd6e18",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "free | grep Mem | awk '{print 100*($4+$6+$7)/$2}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Free Memory",
+        "x": 325.2222099304199,
+        "y": 190.55557250976562,
+        "wires": [
+            [
+                "8cf70ed5.e49ec"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "404f06.1e77b0fc",
+        "type": "ui_gauge",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "da9b5871dad1580b",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "CPU",
+        "label": "CPU",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 645.111083984375,
+        "y": 114.11111450195312,
+        "wires": []
+    },
+    {
+        "id": "8cf70ed5.e49ec",
+        "type": "ui_gauge",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "da9b5871dad1580b",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Memory free",
+        "label": "%",
+        "format": "{{parseInt(value)}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 663.3333320617676,
+        "y": 176.55556392669678,
+        "wires": []
+    },
+    {
+        "id": "a508a5b7.89a128",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "df -h",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Disk Usage",
+        "x": 322.88884353637695,
+        "y": 258.2222442626953,
+        "wires": [
+            [
+                "a8dc2f34.5e32b"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ad4498e0.e7c278",
+        "type": "ui_gauge",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "group": "da9b5871dad1580b",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Disk Space",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 661.1110496520996,
+        "y": 244.88890743255615,
+        "wires": []
+    },
+    {
+        "id": "a8dc2f34.5e32b",
+        "type": "function",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "func": "var re = /([0-9]{2})%/\nvar idx = msg.payload.search(re);\nvar str = msg.payload;\nif (idx >=0) {\n    str = msg.payload.substring(idx, idx + 2);\n}\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470.66661071777344,
+        "y": 244.88890171051025,
+        "wires": [
+            [
+                "ad4498e0.e7c278"
+            ]
+        ]
+    },
+    {
+        "id": "5e6e69bb.0e1d38",
+        "type": "inject",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 122.88884353637695,
+        "y": 258.2222442626953,
+        "wires": [
+            [
+                "a508a5b7.89a128"
+            ]
+        ]
+    },
+    {
+        "id": "620c2ccf.7c7584",
+        "type": "ui_text",
+        "z": "9cf3a6d.1104258",
+        "group": "e7dcccd30846232a",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "name": "",
+        "label": "IP Address",
+        "format": "{{value.substring(0, value.indexOf(\" \"))}}",
+        "layout": "col-center",
+        "x": 661.555591583252,
+        "y": 430.8889102935791,
+        "wires": []
+    },
+    {
+        "id": "19fadb42.3d0c25",
+        "type": "inject",
+        "z": "9cf3a6d.1104258",
+        "name": "",
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 118.90821075439453,
+        "y": 445.567081451416,
+        "wires": [
+            [
+                "9cce8e0f.766f7"
+            ]
+        ]
+    },
+    {
+        "id": "9cce8e0f.766f7",
+        "type": "exec",
+        "z": "9cf3a6d.1104258",
+        "command": "hostname",
+        "addpay": false,
+        "append": "-I",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Get Local IP",
+        "x": 323.4637641906738,
+        "y": 446.06709480285645,
+        "wires": [
+            [
+                "b1e5e669.f1fd48",
+                "620c2ccf.7c7584"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b1e5e669.f1fd48",
+        "type": "mqtt out",
+        "z": "9cf3a6d.1104258",
+        "name": "Send IP thru MQTT",
+        "topic": "raspberrypi3_ip_gama",
+        "qos": "0",
+        "retain": "true",
+        "broker": "7bc02db765c5e608",
+        "x": 680.6859703063965,
+        "y": 380.34489250183105,
+        "wires": []
+    }
+]

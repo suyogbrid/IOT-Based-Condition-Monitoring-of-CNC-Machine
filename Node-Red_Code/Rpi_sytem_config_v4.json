@@ -1,0 +1,844 @@
+[
+    {
+        "id": "f09e317c50966ba0",
+        "type": "tab",
+        "label": "System Config",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2653a0b0.26d638",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fba68adf.14e13",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "command": "vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "RPi Temp.",
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "fa5b499.e176cb8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7c8379de.068868",
+        "type": "inject",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "180",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "6",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 224.5,
+        "y": 108.25,
+        "wires": [
+            [
+                "fba68adf.14e13",
+                "972ece2a.3dbe8",
+                "6242be99.26ac88",
+                "270f61f0.9af05e",
+                "685145c38ceac64a"
+            ]
+        ]
+    },
+    {
+        "id": "fa5b499.e176cb8",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "func": "str = msg.payload\nmsg.payload = str.substring(5,9);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "2653a0b0.26d638",
+                "28b64a2c.b32116",
+                "105da9547136332a"
+            ]
+        ]
+    },
+    {
+        "id": "28b64a2c.b32116",
+        "type": "ui_chart",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 790,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "972ece2a.3dbe8",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "command": "top -d 0.5 -b -n2 | grep \"Cpu(s)\"|tail -n 1 | awk '{print $2 + $4}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "CPU Load",
+        "x": 430,
+        "y": 180,
+        "wires": [
+            [
+                "b9372186.ed1a5",
+                "6e99e27beffc7d9b"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6242be99.26ac88",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "free | grep Mem | awk '{print 100*($4+$6+$7)/$2}'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "Free Memory",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "9b301b09.8c0468"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b9372186.ed1a5",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "1890881e.83819",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Processor",
+        "label": "CPU",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9b301b09.8c0468",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "group": "9a96a8b1.92db78",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Memory",
+        "label": "RAM",
+        "format": "{{value.toFixed(1)}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "270f61f0.9af05e",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "command": "df -h",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "winHide": false,
+        "name": "Disk Usage",
+        "x": 430,
+        "y": 340,
+        "wires": [
+            [
+                "d70b7556.a0a9e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7ca6ecb.7512014",
+        "type": "ui_gauge",
+        "z": "f09e317c50966ba0",
+        "d": true,
+        "name": "",
+        "group": "72fc319.cc425d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Disk",
+        "label": "Usage",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 790,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d70b7556.a0a9e",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "func": "var re = /([0-9]{2})%/\nvar idx = msg.payload.search(re);\nvar str = msg.payload;\nif (idx >=0) {\n    str = msg.payload.substring(idx, idx + 2);\n}\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "7ca6ecb.7512014",
+                "4e733097fb2a5495"
+            ]
+        ]
+    },
+    {
+        "id": "4513eb464bea5f29",
+        "type": "ui_button",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "group": "c5f1b8aa.45bc08",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "restore",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 220,
+        "y": 500,
+        "wires": [
+            [
+                "3ada0815dfbe3256"
+            ]
+        ]
+    },
+    {
+        "id": "3ada0815dfbe3256",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Reboot",
+        "x": 420,
+        "y": 500,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "93efa98c3014e68b",
+        "type": "ui_button",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "group": "c5f1b8aa.45bc08",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Shutdown",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "power_settings_new",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 209.61107635498047,
+        "y": 556.4722290039062,
+        "wires": [
+            [
+                "6a8a8f8c55a782bb"
+            ]
+        ]
+    },
+    {
+        "id": "6a8a8f8c55a782bb",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "sudo shutdown -h now",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Shutdown",
+        "x": 429.49996185302734,
+        "y": 556.6944227218628,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "49fc0e1fecb88bec",
+        "type": "ui_text",
+        "z": "f09e317c50966ba0",
+        "group": "c5f1b8aa.45bc08",
+        "order": 2,
+        "width": "6",
+        "height": "4",
+        "name": "",
+        "label": "IP Address",
+        "format": "{{value.substring(0, value.indexOf(\" \"))}}",
+        "layout": "col-center",
+        "x": 766.8888969421387,
+        "y": 600.888840675354,
+        "wires": []
+    },
+    {
+        "id": "685145c38ceac64a",
+        "type": "exec",
+        "z": "f09e317c50966ba0",
+        "command": "hostname",
+        "addpay": false,
+        "append": "-I",
+        "useSpawn": "",
+        "timer": "",
+        "name": "Get Local IP",
+        "x": 428.79706954956055,
+        "y": 616.0670251846313,
+        "wires": [
+            [
+                "b61a8716ba42cc0b",
+                "49fc0e1fecb88bec",
+                "f0526cb91ae96427"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b61a8716ba42cc0b",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "Send IP thru MQTT",
+        "topic": "raspberrypi3_ip_gama",
+        "qos": "0",
+        "retain": "true",
+        "broker": "14bc5267.4d798e",
+        "x": 786.0192756652832,
+        "y": 550.344822883606,
+        "wires": []
+    },
+    {
+        "id": "f0526cb91ae96427",
+        "type": "debug",
+        "z": "f09e317c50966ba0",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "105da9547136332a",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "system_temp MQTT",
+        "topic": "system_temp",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "14bc5267.4d798e",
+        "x": 1040,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6e99e27beffc7d9b",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "system_cpu MQTT",
+        "topic": "system_cpu",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "14bc5267.4d798e",
+        "x": 1070,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4e733097fb2a5495",
+        "type": "mqtt out",
+        "z": "f09e317c50966ba0",
+        "name": "system_disk MQTT",
+        "topic": "system_disk",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "14bc5267.4d798e",
+        "x": 990,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "a736a6f009c153b4",
+        "type": "inject",
+        "z": "f09e317c50966ba0",
+        "name": "30 sec read",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1000,
+        "wires": [
+            [
+                "b35aeb96f5705391"
+            ]
+        ]
+    },
+    {
+        "id": "b35aeb96f5705391",
+        "type": "mongodb-aleph-in",
+        "z": "f09e317c50966ba0",
+        "mongodb": "b312f59247fc0ff0",
+        "name": "",
+        "collection": "new",
+        "operation": "find",
+        "x": 340,
+        "y": 1000,
+        "wires": [
+            [
+                "991884e8be07f94d",
+                "0572cd0b98539913",
+                "d4f5055509776ff5"
+            ]
+        ]
+    },
+    {
+        "id": "991884e8be07f94d",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "power DB",
+        "func": "msg.payload = msg.payload[0]\nvar { Power } = msg.payload\nmsg.payload = Power\n\nif(msg.payload == 1){\n    msg.payload = 0\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1000,
+        "wires": [
+            [
+                "72fe14f678b7ddf0"
+            ]
+        ]
+    },
+    {
+        "id": "0572cd0b98539913",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "reboot DB",
+        "func": "msg.payload = msg.payload[0]\nvar { Reboot } = msg.payload\nmsg.payload = Reboot\n\nif(msg.payload == 1){\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 920,
+        "wires": [
+            [
+                "d59b19cb751a3e0c",
+                "3ada0815dfbe3256"
+            ]
+        ]
+    },
+    {
+        "id": "d4f5055509776ff5",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "boot DB",
+        "func": "msg.payload = msg.payload[0]\nvar { Boot } = msg.payload\nmsg.payload = Boot\n\nif (msg.payload == 1) {\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1080,
+        "wires": [
+            [
+                "6a8a8f8c55a782bb"
+            ]
+        ]
+    },
+    {
+        "id": "2538a73680339dc6",
+        "type": "inject",
+        "z": "f09e317c50966ba0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1260,
+        "wires": [
+            [
+                "85022345baf0249e",
+                "4cd5edf86a943503"
+            ]
+        ]
+    },
+    {
+        "id": "871a95b22e4db30d",
+        "type": "mongodb-aleph-out",
+        "z": "f09e317c50966ba0",
+        "mongodb": "b312f59247fc0ff0",
+        "name": "",
+        "collection": "new",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 660,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d59b19cb751a3e0c",
+        "type": "debug",
+        "z": "f09e317c50966ba0",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "85022345baf0249e",
+        "type": "debug",
+        "z": "f09e317c50966ba0",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "4cd5edf86a943503",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "power on db once",
+        "func": "msg.power = 0\nmsg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { Reboot: msg.power, Boot: msg.power } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1260,
+        "wires": [
+            [
+                "871a95b22e4db30d"
+            ]
+        ]
+    },
+    {
+        "id": "f3246bf17f0f92b9",
+        "type": "debug",
+        "z": "f09e317c50966ba0",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "72fe14f678b7ddf0",
+        "type": "function",
+        "z": "f09e317c50966ba0",
+        "name": "power 0's update DB",
+        "func": "msg.query = { _msgid: \"ade3a876ed9287ca\" }\nmsg.payload = { $set: { Power: msg.payload} }\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 1000,
+        "wires": [
+            [
+                "f3246bf17f0f92b9",
+                "871a95b22e4db30d"
+            ]
+        ]
+    },
+    {
+        "id": "1890881e.83819",
+        "type": "ui_group",
+        "name": "Col1",
+        "tab": "c3173234.2636e",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "9a96a8b1.92db78",
+        "type": "ui_group",
+        "name": "Col2",
+        "tab": "c3173234.2636e",
+        "order": 2,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "72fc319.cc425d",
+        "type": "ui_group",
+        "name": "Col3",
+        "tab": "c3173234.2636e",
+        "order": 3,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "c5f1b8aa.45bc08",
+        "type": "ui_group",
+        "name": "Actions",
+        "tab": "c3173234.2636e",
+        "order": 4,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "14bc5267.4d798e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "raspberry_do_gama_alive",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "Raspberry ativo",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "b312f59247fc0ff0",
+        "type": "mongodb-aleph-config",
+        "hostname": "iot.mckt0.mongodb.net",
+        "topology": "dnscluster",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "new",
+        "name": "mongodb"
+    },
+    {
+        "id": "c3173234.2636e",
+        "type": "ui_tab",
+        "name": "RPi Control",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
