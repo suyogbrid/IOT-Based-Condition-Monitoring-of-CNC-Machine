@@ -1,0 +1,11 @@
+Note :-
+
+The node-red also deploy on the aws ec-2 machine by doing this you can access the node-red Dash board from anywhere. you can install node-red in locally and also through docker container.
+when you install node-red through docker container or even locally need to edit security group inbound rule give the access to port 1880.
+
+acess the dashboard - public_ip:1880/ui 
+acess the flow - public_ip:1880 
+
+
+
+Node-red install link - https://nodered.org/docs/getting-started/local
