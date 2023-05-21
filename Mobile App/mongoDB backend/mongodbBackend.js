@@ -20,11 +20,11 @@ const MongodbBackend = () => {
 
         const config = {
           method: 'post',
-          url: 'https://data.mongodb-api.com/app/data-jlyty/endpoint/data/v1/action/findOne',
+          url: '<URL>',
           headers: {
             'Content-Type': 'application/json',
             'Access-Control-Request-Headers': '*',
-            'api-key': "DZeFgyc9pRqHawEBdfMq4MtYJDdEOQNRUi3m28gzxJAonJrE4ipMQ83m26pSUyWS",
+            'api-key': "<API KEY>",
           },
           data: data
         };
